@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../css/ahorcado.css">
+</head>
+
+<body>
+    <div class="dificultad">
+        <input type="radio" name="dificultad" value="facil" id="facil" onclick="dificultadChanged('facil')" />
+        <label for="facil">Fácil</label>
+        <input type="radio" name="dificultad" value="medio" id="medio" onclick="dificultadChanged('medio')" />
+        <label for="medio">Medio</label>
+        <input type="radio" name="dificultad" value="dificil" id="dificil" onclick="dificultadChanged('dificil')" />
+        <label for="dificil">Difícil</label>
+    </div>
+    <canvas id="ahorcadoCanvas" width="200" height="300"></canvas>
+    <p id="palabra"></p>
+    <div class="qwerty">
+        <div id="row1">
+            <button onclick="checarLetra('q', this)" id="q" disabled class="letra">Q</button>
+            <button onclick="checarLetra('w', this)" id="w" disabled class="letra">W</button>
+            <button onclick="checarLetra('e', this)" id="e" disabled class="letra">E</button>
+            <button onclick="checarLetra('r', this)" id="r" disabled class="letra">R</button>
+            <button onclick="checarLetra('t', this)" id="t" disabled class="letra">T</button>
+            <button onclick="checarLetra('y', this)" id="y" disabled class="letra">Y</button>
+            <button onclick="checarLetra('u', this)" id="u" disabled class="letra">U</button>
+            <button onclick="checarLetra('i', this)" id="i" disabled class="letra">I</button>
+            <button onclick="checarLetra('o', this)" id="o" disabled class="letra">O</button>
+            <button onclick="checarLetra('p', this)" id="p" disabled class="letra">P</button>
+        </div>
+        <div id="row2">
+            <button onclick="checarLetra('a', this)" id="a" disabled class="letra">A</button>
+            <button onclick="checarLetra('s', this)" id="s" disabled class="letra">S</button>
+            <button onclick="checarLetra('d', this)" id="d" disabled class="letra">D</button>
+            <button onclick="checarLetra('f', this)" id="f" disabled class="letra">F</button>
+            <button onclick="checarLetra('g', this)" id="g" disabled class="letra">G</button>
+            <button onclick="checarLetra('h', this)" id="h" disabled class="letra">H</button>
+            <button onclick="checarLetra('j', this)" id="j" disabled class="letra">J</button>
+            <button onclick="checarLetra('k', this)" id="k" disabled class="letra">K</button>
+            <button onclick="checarLetra('l', this)" id="l" disabled class="letra">L</button>
+        </div>
+        <div id="row3">
+            <button onclick="checarLetra('z', this)" id="z" disabled class="letra">Z</button>
+            <button onclick="checarLetra('x', this)" id="x" disabled class="letra">X</button>
+            <button onclick="checarLetra('c', this)" id="c" disabled class="letra">C</button>
+            <button onclick="checarLetra('v', this)" id="v" disabled class="letra">V</button>
+            <button onclick="checarLetra('b', this)" id="b" disabled class="letra">B</button>
+            <button onclick="checarLetra('n', this)" id="n" disabled class="letra">N</button>
+            <button onclick="checarLetra('m', this)" id="m" disabled class="letra">M</button>
+        </div>
+    </div>
+    <script src="../js/ahorcado.js"></script>
+</body>
+
+</html>

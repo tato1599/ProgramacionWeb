@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+
+            th,
+            td {
+                padding: 5px;
+                font-size: 12px;
+            }
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .materia {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .profesor {
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
+        .hora-libre {
+            background-color: #ecf0f1;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Horario</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+        </tr>
+        <tr>
+            <td>16:00 - 17:00</td>
+            <td class="materia">Conmutación y Enrutamiento<p class="profesor">Flores Regalado Anilu</p>
+            </td>
+            <td class="materia">Conmutación y Enrutamiento<p class="profesor">Flores Regalado Anilu</p>
+            </td>
+            <td class="materia">Conmutación y Enrutamiento<p class="profesor">Flores Regalado Anilu</p>
+            </td>
+            <td class="materia">Conmutación y Enrutamiento<p class="profesor">Flores Regalado Anilu</p>
+            </td>
+            <td class="materia">Conmutación y Enrutamiento<p class="profesor">Flores Regalado Anilu</p>
+            </td>
+        </tr>
+        <tr>
+            <td>17:00 - 18:00</td>
+            <td class="materia">Taller de Investigación II<p class="profesor">Aguilar Chavez Luz Angelica</p>
+            </td>
+            <td class="materia">Taller de Investigación II<p class="profesor">Aguilar Chavez Luz Angelica</p>
+            </td>
+            <td class="materia">Taller de Investigación II<p class="profesor">Aguilar Chavez Luz Angelica</p>
+            </td>
+            <td class="materia">Taller de Investigación II<p class="profesor">Aguilar Chavez Luz Angelica</p>
+            </td>
+            <td class="hora-libre"></td>
+        </tr>
+        <tr>
+            <td>18:00 - 19:00</td>
+            <td class="hora-libre"></td>
+            <td class="hora-libre"></td>
+            <td class="hora-libre"></td>
+            <td class="hora-libre"></td>
+            <td class="hora-libre"></td>
+        </tr>
+        <tr>
+            <td>19:00 - 20:00</td>
+            <td class="hora-libre"></td>
+            <td class="hora-libre"></td>
+            <td class="hora-libre"></td>
+            <td class="hora-libre"></td>
+            <td class="hora-libre"></td>
+        </tr>
+        <tr>
+            <td>20:00 - 21:00</td>
+            <td class="materia">Programación Web<p class="profesor">Ruiz Escobar Tania Guadalupe</p>
+            </td>
+            <td class="materia">Programación Web<p class="profesor">Ruiz Escobar Tania Guadalupe</p>
+            </td>
+            <td class="materia">Programación Web<p class="profesor">Ruiz Escobar Tania Guadalupe</p>
+            </td>
+            <td class="materia">Programación Web<p class="profesor">Ruiz Escobar Tania Guadalupe</p>
+            </td>
+            <td class="materia">Programación Web<p class="profesor">Ruiz Escobar Tania Guadalupe</p>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

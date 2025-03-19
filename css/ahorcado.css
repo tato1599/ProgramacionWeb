@@ -1,0 +1,87 @@
+.letra:not(:disabled):active,
+.letraP {
+    background-color: #000;
+    color: #fff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.dificultad {
+    margin-bottom: 20px;
+}
+
+.dificultad input {
+    display: none;
+}
+
+.dificultad label {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dificultad input:checked+label {
+    background-color: #4CAF50;
+    color: white;
+}
+
+canvas {
+    background-color: white;
+    border: 2px solid black;
+    margin-top: 20px;
+}
+
+#palabra {
+    font-size: 24px;
+    margin: 20px 0;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.qwerty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.qwerty div {
+    margin: 5px 0;
+}
+
+.letra {
+    width: 40px;
+    height: 40px;
+    margin: 3px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.letra:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+}
+
+.letra.correcta {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.letra.incorrecta {
+    background-color: #D32F2F;
+    color: white;
+}
