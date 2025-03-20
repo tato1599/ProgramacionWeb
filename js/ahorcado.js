@@ -6,6 +6,7 @@ var palabra = '';
 var palabra_oculta = '';
 var intentos_erroneos = 0;
 
+
 const palabras = {
     'facil': [
         'casa',
@@ -45,6 +46,47 @@ const palabras = {
     ]
 };
 
+document.addEventListener("DOMContentLoaded", function () {
+    const themeButton = document.querySelector("[data-theme-toggle]");
+    const htmlElement = document.documentElement;
+
+    function getPreferredTheme() {
+        const localStorageTheme = localStorage.getItem("theme");
+        const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        if (localStorageTheme) {
+            return localStorageTheme;
+        }
+        return systemSettingDark ? "dark" : "light";
+    }
+
+    let currentTheme = getPreferredTheme();
+    htmlElement.setAttribute("data-theme", currentTheme);
+    
+    function toggleTheme() {
+        let newTheme = htmlElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        htmlElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+    }
+
+    themeButton.addEventListener("click", toggleTheme);
+
+});
+
+
+function getColorTheme() {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? '#FFFFFF' : '#000000';
+}
+
+function setCanvasColor() {
+    ctx.strokeStyle = getColorTheme();
+}
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    setCanvasColor();
+});
+
+
 function dificultadChanged(dificultad_seleccionada) {
     dificultad = dificultad_seleccionada;
     reiniciarJuego();
@@ -81,6 +123,7 @@ function animarLinea(x1, y1, x2, y2, duracion, callback) {
     requestAnimationFrame(drawStep);
 }
 
+
 function animarCabeza(duracion) {
     let startTime = null;
 
@@ -89,7 +132,7 @@ function animarCabeza(duracion) {
         let progress = (timestamp - startTime) / duracion;
 
         if (progress > 1) progress = 1;
-
+        setCanvasColor();
         ctx.beginPath();
         ctx.arc(150, 75, 25 * progress, 0, Math.PI * 2);
         ctx.stroke();
@@ -103,6 +146,7 @@ function animarCabeza(duracion) {
 }
 
 function dibujarHorca() {
+    setCanvasColor();
     animarLinea(20, 280, 180, 280, 500, () => {
         animarLinea(50, 280, 50, 20, 500, () => {
             animarLinea(50, 20, 150, 20, 500, () => {
@@ -145,6 +189,7 @@ const partesAhorcado = [
     dibujarPiernaIzquierda,
     dibujarPiernaDerecha
 ];
+
 
 function reiniciarJuego() {
     limpiarCanvas();
@@ -245,8 +290,10 @@ function ganar() {
 function perder() {
     setDisabled(false);
     Swal.fire({
-        title: 'Opps!!',
+        title: '<h4 style="color:rgb(20, 20, 20);">Oh no!!</h4>',
         icon: 'error',
-        text: 'Has Perdido :c'
+        text: 'has perdido :c',
+        background: 'light-dark(rgba(92, 107, 81, 0.91), rgba(78, 78, 78, 0.73))',
+
     });
 }
