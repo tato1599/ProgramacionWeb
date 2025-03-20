@@ -220,12 +220,15 @@ function checarLetra(letra, el) {
 
 function setDisabled(disabled) {
     document.querySelectorAll('#row1 > button').forEach((button) => {
+        button.classList = 'letra';
         button.disabled = disabled;
     });
     document.querySelectorAll('#row2 > button').forEach((button) => {
+        button.classList = 'letra';
         button.disabled = disabled;
     });
     document.querySelectorAll('#row3 > button').forEach((button) => {
+        button.classList = 'letra';
         button.disabled = disabled;
     });
 }
