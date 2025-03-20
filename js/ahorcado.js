@@ -293,7 +293,7 @@ function perder() {
         title: '<h4 style="color:rgb(20, 20, 20);">Oh no!!</h4>',
         icon: 'error',
         text: 'has perdido :c',
-        background: 'light-dark(rgba(92, 107, 81, 0.91), rgba(78, 78, 78, 0.73))',
+        background: 'light-dark(rgb(239, 241, 237), rgba(78, 78, 78, 0.73))',
 
     });
 }
